@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity  0.4.24;
 import './SafeMath.sol';
 
 
@@ -14,7 +14,7 @@ contract QRC20Token is SafeMath {
     string public constant symbol = 'QTC';
     //Default assumes totalSupply can't be over max (2^256 - 1).
     //you need multiply 10^decimals by your real total supply.
-    uint256 public totalSupply = 10**9 * 10**uint256(decimals);
+    uint256 public constant totalSupply = 10**9 * 10**uint256(decimals);
 
     mapping (address => uint256) public balanceOf;
     mapping (address => mapping (address => uint256)) public allowance;
@@ -33,7 +33,7 @@ contract QRC20Token is SafeMath {
     }
 
     function transfer(address _to, uint256 _value)
-    public
+    external
     validAddress(_to)
     returns (bool success)
     {
@@ -44,7 +44,7 @@ contract QRC20Token is SafeMath {
     }
 
     function transferFrom(address _from, address _to, uint256 _value)
-    public
+    external
     validAddress(_from)
     validAddress(_to)
     returns (bool success)
@@ -57,7 +57,7 @@ contract QRC20Token is SafeMath {
     }
 
     function approve(address _spender, uint256 _value)
-    public
+    external
     validAddress(_spender)
     returns (bool success)
     {
