@@ -11,14 +11,14 @@ contract QRC20Token is SafeMath {
 
     // you need change the following three values
     // string public constant name = 'GOMT TEST 1';
-    string public constant name = 'HAMED TEST';
-    string public constant symbol = 'HATC';
+    string public constant name = 'GoMeat';
+    string public constant symbol = 'GOMT';
     // string public constant symbol = 'GOMT';
     //Default assumes totalSupply can't be over max (2^256 - 1).
     //you need multiply 10^decimals by your real total supply.
     
     //totalSupply variable made constant *
-    uint256 public constant totalSupply = 10*5*6 * 10**uint256(decimals);
+    uint256 public constant totalSupply = 10**6*5 * 10**uint256(decimals);
 
     mapping (address => uint256) public balanceOf;
     mapping (address => mapping (address => uint256)) public allowance;
